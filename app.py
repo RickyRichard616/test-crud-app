@@ -16,7 +16,7 @@ def conectar():
 def hello_world():
     return 'Hello, World!'
 
-"""
+
 @app.route("/api/modificar", methods=["POST"])
 def modificar_producto():
     datos = request.get_json()
@@ -49,5 +49,6 @@ def eliminar_producto():
     cursor.close()
     conn.close()
     return jsonify(resultados)
-"""
+
+
 
