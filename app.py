@@ -14,7 +14,13 @@ def conectar():
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!'
+    conn = conectar()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM productos")
+    resultados = cursor.fetchall()
+    cursor.close()
+    conn.close()
+    return jsonify(resultados)
 
 
 @app.route("/api/modificar", methods=["POST"])
@@ -47,6 +53,7 @@ def eliminar_producto():
     cursor.close()
     conn.close()
     return jsonify(resultados)
+
 
 
 
