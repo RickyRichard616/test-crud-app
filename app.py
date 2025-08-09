@@ -23,9 +23,7 @@ def modificar_producto():
     identificador = datos["id"]
     nombre = datos["nombre"]
     precio = datos["precio"]
-    origen = datos["origen"]
-    color = datos["color"]
-    consulta = "UPDATE productos SET nombre='"+str(nombre)+"', precio='"+str(precio)+"', origen='"+str(origen)+"', color='"+str(color)+"' WHERE id='"+str(identificador)+"';"
+    consulta = "UPDATE productos SET nombre='"+str(nombre)+"', precio='"+str(precio)+"' WHERE id='"+str(identificador)+"';"
     conn = conectar()
     cursor = conn.cursor()
     cursor.execute(consulta)
@@ -49,6 +47,7 @@ def eliminar_producto():
     cursor.close()
     conn.close()
     return jsonify(resultados)
+
 
 
 
