@@ -1,20 +1,21 @@
 from flask import Flask, request, jsonify
-import mysql.connector
+"""import mysql.connector"""
 
 app = Flask(__name__)
 
-def conectar():
+"""def conectar():
     return mysql.connector.connect(
         host="localhost",
         user="test",
         password="test",
         database="test_db"
-    )
+    )"""
 
 @app.route('/')
 def hello_world():
     return 'Hello, World!'
 
+"""
 @app.route("/api/modificar", methods=["POST"])
 def modificar_producto():
     datos = request.get_json()
@@ -47,3 +48,4 @@ def eliminar_producto():
     cursor.close()
     conn.close()
     return jsonify(resultados)
+"""
